@@ -1,0 +1,15 @@
+# Write code to Calculate frequency of characters in a string..
+
+s = input("Enter the string: ")
+dic = {}
+
+for i in s:
+    if i in dic:
+        dic[i] =dic[i]+ 1
+    else:
+        dic[i] = 1
+
+print(dic)
+
+
+
