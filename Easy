@@ -1,0 +1,93 @@
+#write a python code to reverser a number...
+
+x=int(input("Enter the number that you want to reverse"))
+s=str(x)
+
+ans=""
+for i in range(len(s)-1,-1,-1):
+    ans=ans+s[i]
+
+print(int(ans))
+
+
+
+# 2. Write the code to find the Fibonacci series upto the nth term.
+
+def fibo(n:int):
+    if(n==0):
+        return 0
+        
+    if(n==1):
+        return 1
+        
+    return fibo(n-1)+fibo(n-2)
+
+
+
+for i in range (0,11):
+    print(fibo(i))
+
+
+#3. Write code of Greatest Common Divisor..
+
+x=int(input("Enter the first number"))
+y=int(input("Enter the second number"))
+
+small=0
+if x<y:
+    small=x
+else:
+    small=y
+gcd=1
+for i in range (2,small+1):
+    if x%i==0 and y%i==0:
+        gcd=i
+    
+print(gcd)
+
+
+# 4.For example, the number 28 is a perfect number because the sum of its proper divisors (1, 2, 4, 7, and 14) equals 28:1+2+4+7+14=281 + 2 + 4 + 7 + 14 = 281+2+4+7+14=28
+#Write a code to tell if the provided number is perfect number or not
+
+
+x=int(input("Enter the number you want to check if it is perfect number or not"))
+sum=0;
+for i in range(1,x):
+    if(x%i==0):
+        sum=sum+i
+
+if(sum==x):
+    print("YES")
+else:
+    print("NO")
+
+
+
+#5. Write code to Check if two strings are Anagram or not
+
+def chech_anagram (str1:str,str2:str):
+    n1=len(str1)
+    n2=len(str2)
+    
+    if(n1!=n2):
+        return False
+    str1="".join(sorted(str1))
+    str2="".join(sorted(str2))
+    
+        
+    for i in range (0,n1):
+        if(str1[i]!=str2[i]):
+            return False
+            
+    return True
+    
+
+print(chech_anagram("isha","ish"))
+
+
+# 6.Write code Check if the given string is Palindrome or not
+s=input("Enter the string ")
+if(s=="".join(reversed(s))):
+    print("Yes")
+else:
+    print("NO")
